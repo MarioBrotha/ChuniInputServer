@@ -16,12 +16,27 @@ public class ChuniInputServer
     static char[] keyboardArray = new char[18];
 
 
-
     public static void StartListening()
     {
+        int selection = 0;
         IPHostEntry ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());
-        IPAddress ipAddress = ipHostInfo.AddressList[6];
+        Console.WriteLine("Select your IP address by the number:");
+        for (int i = 0; i < ipHostInfo.AddressList.Length; i++)
+        {
+            Console.WriteLine(i + ": " + ipHostInfo.AddressList[i].ToString());
+        }
+        string temp = Console.ReadLine();
 
+        try
+        {
+            selection = Int32.Parse(temp);
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Invalid input (must be a number)");
+        }
+
+        IPAddress ipAddress = ipHostInfo.AddressList[selection];
         // Create a TCP/IP socket.  
         /*Socket listener = new Socket(ipAddress.AddressFamily,
             SocketType.Stream, ProtocolType.Tcp);*/
@@ -36,7 +51,7 @@ public class ChuniInputServer
         int bytesRead = 0;
         byte[] buffer = new byte[62];*/
 
-        Console.WriteLine("The Server has started on port 7800");
+        Console.WriteLine("The Server has started on port 7800 for IP " + ipHostInfo.AddressList[selection]);
         Socket serverSocket = tcpListener.AcceptSocket();
 
         // Bind the socket to the local endpoint and listen for incoming connections.  ij
