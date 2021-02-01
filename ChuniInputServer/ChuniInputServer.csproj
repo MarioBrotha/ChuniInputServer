@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B1A47C17-235F-4F61-B65F-A56219A4CF09}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ChunithmButtonsServer2</RootNamespace>
-    <AssemblyName>ChunithmButtonsServer2</AssemblyName>
+    <RootNamespace>ChuniInputServer</RootNamespace>
+    <AssemblyName>ChuniInputServer</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
