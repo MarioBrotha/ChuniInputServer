@@ -64,6 +64,7 @@ public class ChuniInputServer
                 streamReader = new StreamReader(networkStream);
 
                 char[] newBuffer = new char[18];
+                Console.WriteLine("Connected");
 
                 while (true)
                 {
